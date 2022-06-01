@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Officedesk_G">
+  <link
+    name="Officedesk_G">
+    <inertial>
+      <origin
+        xyz="-3.58E-17 4.96E-17 0.39692"
+        rpy="0 0 0" />
+      <mass
+        value="19.488" />
+      <inertia
+        ixx="0.806"
+        ixy="7.9409E-18"
+        ixz="-1.8106E-19"
+        iyy="1.6288"
+        iyz="1.811E-17"
+        izz="2.058" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Officedesk_G/meshes/Officedesk_G.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="package://Officedesk_G/textures/" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Officedesk_G/meshes/Officedesk_G.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

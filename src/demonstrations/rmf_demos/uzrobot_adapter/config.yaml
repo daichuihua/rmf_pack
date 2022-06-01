@@ -1,0 +1,89 @@
+# FLEET CONFIG =================================================================
+# RMF Fleet parameters
+
+rmf_fleet:
+  name: "UzRobot"
+  fleet_manager:
+    prefix: "http://127.0.0.1:8000"
+    user: "some_user"
+    password: "some_password"
+  limits:
+    # linear: [0.4, 0.2] # velocity, acceleration
+    # angular: [0.3, 0.35] # velocity, acceleration
+    linear: [0.6, 0.2] # velocity, acceleration----just OK
+    angular: [0.1, 0.05] # velocity, acceleration
+    # linear: [0.5, 0.1] # velocity, acceleration------better
+    # angular: [0.15, 0.08] # velocity, acceleration
+  profile: # Robot profile is modelled as a circle
+    footprint: 0.25 # radius in m
+    vicinity: 0.35 # radius in m
+  reversible: False # whether robots in this fleet can reverse
+  battery_system:
+    voltage: 24.0 # V
+    capacity: 40.0 # Ahr
+    charging_current: 26.4 # A
+  mechanical_system:
+    mass: 80.0 # kg
+    moment_of_inertia: 20.0 #kgm^2
+    friction_coefficient: 0.20
+  ambient_system:
+    power: 20.0 # W
+  tool_system:
+    power: 760.0 # W
+  recharge_threshold: 0.20 # Battery level below which robots in this fleet will not operate
+  recharge_soc: 1.0 # Battery level to which robots in this fleet should be charged up to during recharging tasks
+  publish_fleet_state: True
+  account_for_battery_drain: True
+  task_capabilities: # Specify the types of RMF Tasks that robots in this fleet are capable of performing
+    loop: True
+    delivery: False
+    clean: False
+    finishing_request: "nothing" # [park, charge, nothing]
+
+# DeliveryBot CONFIG =================================================================
+
+robots:
+  # Here the user is expected to append the configuration for each robot in the
+  # fleet.
+  # Configuration for first robot in this fleet
+  # deliverybot1:
+    robot_config:
+      max_delay: 10.0 # allowed seconds of delay of the current itinerary before it gets interrupted and replanned
+    rmf_config:
+      robot_state_update_frequency: 0.5
+      start:
+        map_name: "L8"
+        # waypoint: "charger_deliverybot1" # Optional
+        # orientation: 0.0 # Optional, radians
+        waypoint: "UzRobot_charger_3"
+        orientation: 0.0
+      charger:
+        waypoint: "UzRobot_charger_3"
+  # Configuration for the second robot in this fleet if there is a second robot
+  # Uncomment if more than one robot exists.
+  # deliverybot2:
+  #   robot_config:
+  #     max_delay: 10.0 # allowed seconds of delay of the current itinerary before it gets interrupted and replanned
+  #   rmf_config:
+  #     robot_state_update_frequency: 0.5
+  #     start:
+  #       map_name: "L1"
+  #       # waypoint: "charger_deliverybot2" # Optional
+  #       # orientation: 0.0 # Optional, radians
+  #       waypoint: null
+  #       orientation: null
+  #     charger:
+  #       waypoint: "charger_deliverybot2"
+
+# TRANSFORM CONFIG =============================================================
+# For computing transforms between Robot and RMF coordinate systems
+
+reference_coordinates:
+  rmf: [[29.4, -16.5],
+        [35.6, -16.7],
+        [29, -45.6],
+        [22.6, -45.6]]
+  robot: [[8.55, 8.522324],
+        [15.25, 10.52232],
+        [16.85, -20.4777],
+        [10.7, -22.2277]]

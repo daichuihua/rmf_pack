@@ -1,0 +1,42 @@
+<sdf version='1.7'>
+  <model name='Officedesk_RL'>
+    <link name='Officedesk_RL'>
+      <inertial>
+        <pose>-0.29734 -1.2465 0.62911 0 -0 0</pose>
+        <mass>449</mass>
+        <inertia>
+          <ixx>418.05</ixx>
+          <ixy>116.78</ixy>
+          <ixz>2.148</ixz>
+          <iyy>79.097</iyy>
+          <iyz>-0.25232</iyz>
+          <izz>486.41</izz>
+        </inertia>
+      </inertial>
+      <collision name='Officedesk_RL_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Officedesk_RL/meshes/Officedesk_RL.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Officedesk_RL_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Officedesk_RL/meshes/Officedesk_RL.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Sofa_U">
+  <link
+    name="Sofa_U">
+    <inertial>
+      <origin
+        xyz="8.9951E-10 0.031101 0.20492"
+        rpy="0 0 0" />
+      <mass
+        value="444" />
+      <inertia
+        ixx="34.103"
+        ixy="-1.3593E-07"
+        ixz="-3.539E-08"
+        iyy="103.94"
+        iyz="2.954"
+        izz="120.9" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sofa_U/meshes/Sofa_U.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="package://Sofa_U/textures/" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Sofa_U/meshes/Sofa_U.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

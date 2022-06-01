@@ -1,0 +1,122 @@
+<?xml version='1.0' ?>
+
+<launch>
+  <arg name="use_sim_time" default="false"/>
+  <arg name="failover_mode" default="false"/>
+
+  <!-- aimbot fleet adapter for real_world-->
+  <!-- <group>
+    <include file="$(find-pkg-share aimbot_adapter)/launch/aimbot_adapter.launch.xml">
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/0.yaml" />
+      <arg name="config_file" value="$(find-pkg-share aimbot_adapter)/config.yaml" />
+    </include>
+  </group> -->
+
+  <!-- uzrobot fleet adapter for real_world-->
+  <group>
+    <include file="$(find-pkg-share uzrobot_adapter)/launch/uzrobot_adapter.launch.xml">
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/0.yaml" />
+      <arg name="config_file" value="$(find-pkg-share uzrobot_adapter)/config.yaml" />
+    </include>
+  </group>
+
+  <!-- <group>
+    <include file="$(find-pkg-share rmf_demos_fleet_adapter)/launch/fleet_adapter.launch.xml">
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/0.yaml" />
+      <arg name="config_file" value="$(find-pkg-share rmf_demos_fleet_adapter)/config.yaml" />
+    </include>
+  </group> -->
+
+
+  <!-- Common launch -->
+  <include file="$(find-pkg-share rmf_ubt24_gz)/include/common_ubt24.launch.xml">
+    <arg name="use_sim_time" value="$(var use_sim_time)"/>
+    <arg name="viz_config_file" value ="$(find-pkg-share rmf_ubt24_gz)/rviz/ubt24.rviz"/>
+    <arg name="config_file" value="$(find-pkg-share rmf_ubt24_gz)/ubt24/ubt24.building.yaml"/>
+    <arg name="dashboard_config_file" value="$(find-pkg-share rmf_ubt24_gz)/dashboard_config/dashboard_config.json"/>
+  </include>
+
+
+  <!-- TinyRobot fleet adapter and robot state aggregator needed for the TinyRobot slotcar_plugin -->
+  <!-- <group>
+    <let name="fleet_name" value="tinyRobot"/>
+    <include file="$(find-pkg-share rmf_ubt24_gz)/include/adapters/tinyRobot_adapter.launch.xml">
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/0.yaml" />
+      <arg name="finishing_request" value="nothing"/>
+    </include>
+    <include file="$(find-pkg-share rmf_fleet_adapter)/robot_state_aggregator.launch.xml">
+      <arg name="robot_prefix" value="tinyRobot"/>
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="failover_mode" value="$(var failover_mode)"/>
+    </include>
+  </group> -->
+
+  <!-- AiMbot fleet adapter and robot state aggregator needed for the AiMbot slotcar_plugin -->
+  <!-- <group>
+    <let name="fleet_name" value="AiMbot"/>
+    <include file="$(find-pkg-share rmf_ubt24_gz)/include/adapters/AiMbot_adapter.launch.xml">
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="perform_loop" value="true"/>
+      <arg name="perform_deliveries" value="true"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/0.yaml" />
+      <arg name="finishing_request" value="nothing"/>
+    </include>
+    <include file="$(find-pkg-share rmf_fleet_adapter)/robot_state_aggregator.launch.xml">
+      <arg name="robot_prefix" value="AiMbot"/>
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="failover_mode" value="$(var failover_mode)"/>
+    </include>
+  </group> -->
+  
+  <!-- UzRobot fleet adapter and robot state aggregator needed for the UzRobot slotcar_plugin -->
+  <!-- <group>
+    <let name="fleet_name" value="UzRobot"/>
+    <include file="$(find-pkg-share rmf_ubt24_gz)/include/adapters/UzRobot_adapter.launch.xml">
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="perform_loop" value="true"/>
+      <arg name="perform_deliveries" value="true"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/0.yaml" />
+      <arg name="finishing_request" value="nothing"/>
+    </include>
+    <include file="$(find-pkg-share rmf_fleet_adapter)/robot_state_aggregator.launch.xml">
+      <arg name="robot_prefix" value="YHME"/>
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="failover_mode" value="$(var failover_mode)"/>
+    </include>
+  </group> -->
+
+  <!-- cleanerBotA fleet adapter and robot state aggregator needed for the slotcar_plugin -->
+  <!-- <group>
+    <let name="fleet_name" value="cleanerBotA"/>
+    <include file="$(find-pkg-share rmf_ubt24_gz)/include/adapters/cleanerBotA_adapter.launch.xml">
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="perform_loop" value="true"/>
+      <arg name="perform_cleaning" value="true"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_ubt24_gz)/maps/ubt24/nav_graphs/1.yaml" />
+      <arg name="finishing_request" value="nothing"/>
+    </include>
+    <include file="$(find-pkg-share rmf_fleet_adapter)/robot_state_aggregator.launch.xml">
+      <arg name="robot_prefix" value="$(var fleet_name)"/>
+      <arg name="fleet_name" value="$(var fleet_name)"/>
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="failover_mode" value="$(var failover_mode)"/>
+    </include>
+  </group> -->
+
+  <!-- Mock Docker Node, to provide CleanerBotA Fleet Adapter fix cleaning task paths -->
+  <!-- <group>
+    <let name="docking_config_file" value="$(find-pkg-share rmf_ubt24_gz)/docker/ubt24_docker_config.yaml"/>
+    <node pkg="rmf_demos_tasks" exec="mock_docker" args="-c $(var docking_config_file)">
+      <param name="use_sim_time" value="$(var use_sim_time)"/>
+    </node>
+  </group> -->
+
+</launch> 

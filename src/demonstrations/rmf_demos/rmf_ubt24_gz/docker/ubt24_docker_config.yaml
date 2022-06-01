@@ -1,0 +1,41 @@
+# This docking config file provides the mock docker a series of known paths which
+# the cleaner robot will follow during a docking (aka cleaning) process. 
+#   Example:  Destination: "CLEANZONE" ;  The path here is the trajactory 
+#             which starts from "CLEANZONE_start" to "CLEANZONE"
+#
+# Note: These waypoints are in (x meters, y meters, yaw radian) form
+#
+# If loaded correctly, you will be able to echo the msg via:
+#   ros2 topic echo /dock_summary --qos-durability transient_local --qos-reliability reliable
+#
+# Configuring Cleaning path:
+#    The full cleaning path which the robot will travel along. When configuring, the first
+#    waypoint is required to be the current robot's waypoint.
+#    And the last waypoint should the exact same waypoint as 'finish_waypoint'
+
+cleanerBotA:
+  zone_1a: 
+    level_name: "L1"
+    path: [ [42.21, -16.41, 0.0],
+            [39.08, -15.53, 0.0],
+            [40.13, -13.99, 1.57],
+            [39.99, -17.15, 0.0] ]
+    finish_waypoint: "zone_1a"
+  zone_2a:
+    level_name: "L1"
+    path: [ [53.35, -9.648, 1.57],
+            [50.36, -8.747, 1.57],
+            [52.23, -7.282, 0.0],
+            [53.78, -11.52, 0.0] ]
+    finish_waypoint: "zone_2a"
+  zone_3a:
+    level_name: "L1"
+    path: [ [39.84, -23.02, 1.57],
+            [37.51., -23.32, 1.57],
+            [38.01, -21.26, 1.57],
+            [38.44, -19.53, 0.0],
+            [39.52, -21.08, 0.0] ]
+    finish_waypoint: "zone_3a"
+    
+    
+

@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+
+<launch>
+
+  <arg name="config_file" description="Adapter's config file"/>
+  <arg name="nav_graph_file" description="Nav graph required by fleet adapter"/>
+  <arg name="output" default="screen"/>
+
+  <node pkg="uzrobot_adapter"
+        exec="fleet_adapter"
+        args="--config_file $(var config_file) --nav_graph $(var nav_graph_file)"
+        output="screen">
+    
+  </node>
+
+</launch>

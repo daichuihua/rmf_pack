@@ -1,0 +1,42 @@
+<sdf version='1.7'>
+  <model name='Officerounddesk'>
+    <link name='Officerounddesk'>
+      <inertial>
+        <pose>-0 0 0.44215 0 -0 0</pose>
+        <mass>10.246</mass>
+        <inertia>
+          <ixx>0.36948</ixx>
+          <ixy>5.1245e-17</ixy>
+          <ixz>5.6607e-17</ixz>
+          <iyy>0.36948</iyy>
+          <iyz>-1.1775e-16</iyz>
+          <izz>0.49228</izz>
+        </inertia>
+      </inertial>
+      <collision name='Officerounddesk_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Officerounddesk/meshes/Officerounddesk.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Officerounddesk_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Officerounddesk/meshes/Officerounddesk.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

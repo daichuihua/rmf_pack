@@ -1,0 +1,36 @@
+<sdf version='1.7'>
+  <model name='Officedesk_B'>
+    <link name='Officedesk_B'>
+      <inertial>
+        <pose>0 0 0.375 0 -0 0</pose>
+        <mass>4294.1</mass>
+        <inertia>
+          <ixx>1830</ixx>
+          <ixy>7.3506e-14</ixy>
+          <ixz>-9.0195e-14</ixz>
+          <iyy>7468.7</iyy>
+          <iyz>-4.9057e-14</iyz>
+          <izz>8896.1</izz>
+        </inertia>
+      </inertial>
+      <collision name='Officedesk_B_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Officedesk_B/meshes/Officedesk_B.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Officedesk_B_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Officedesk_B/meshes/Officedesk_B.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

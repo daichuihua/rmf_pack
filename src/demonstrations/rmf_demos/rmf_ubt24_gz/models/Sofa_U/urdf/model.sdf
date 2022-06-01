@@ -1,0 +1,36 @@
+<sdf version='1.7'>
+  <model name='Sofa_U'>
+    <link name='Sofa_U'>
+      <inertial>
+        <pose>0 0.031101 0.20492 0 -0 0</pose>
+        <mass>444</mass>
+        <inertia>
+          <ixx>34.103</ixx>
+          <ixy>-1.3593e-07</ixy>
+          <ixz>-3.539e-08</ixz>
+          <iyy>103.94</iyy>
+          <iyz>2.954</iyz>
+          <izz>120.9</izz>
+        </inertia>
+      </inertial>
+      <collision name='Sofa_U_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Sofa_U/meshes/Sofa_U.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Sofa_U_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://Sofa_U/meshes/Sofa_U.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
